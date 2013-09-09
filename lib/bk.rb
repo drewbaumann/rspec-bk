@@ -5,7 +5,7 @@ class Bk < RSpec::Core::Formatters::BaseTextFormatter
 
     unless failure_count > 0
       HTTParty.get("http://beerkeeper.local/beer?seconds=7")
-      output.print "Your tests passed! Now enjoy a beer for your efforts."
+      output.print green("\n\nYour tests passed! Now enjoy a beer for your efforts.\n")
     end
   end
 
