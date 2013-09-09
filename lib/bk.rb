@@ -4,7 +4,8 @@ class Bk < RSpec::Core::Formatters::BaseTextFormatter
   def dump_summary(duration, example_count, failure_count, pending_count)
 
     unless failure_count > 0
-      HTTParty.get("http://beerkeeper.local/beer?seconds=7")
+      puts `curl -X GET http://beerkeeper.local/beer?seconds=7`
+      # HTTParty.get("http://beerkeeper.local/beer?seconds=7")
       output.print green("\n\nYour tests passed! Now enjoy a beer for your efforts.\n")
     end
   end
