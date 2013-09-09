@@ -6,7 +6,7 @@ class Bk < RSpec::Core::Formatters::BaseTextFormatter
     unless failure_count > 0
       puts `curl -X GET http://beerkeeper.local/beer?seconds=7`
       # HTTParty.get("http://beerkeeper.local/beer?seconds=7")
-      output.print green("\n\nYour tests passed! Now enjoy a beer for your efforts.\n")
+      output.print success_color("\n\nYour tests passed! Now enjoy a beer for your efforts.\n")
     end
   end
 
